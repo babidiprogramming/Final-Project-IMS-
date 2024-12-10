@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> 
+    <h1>View Items</h1>
+        <div class="btn-toolbar mb-2 mb-md 0">
+            <div class="btn-group- me-2">
+                <a class="btn btn-primary" role="button" href="/">Dashboard</a>
+            </div>
+        </div>
+        
+       
+</div>
+
+<form action="/view" method="POST" class="form-control">
+<div class=" row justify-content-center text-align-center align-items-center form-group mb-4">
+    <div class="col">
+        <label for="ItemName">Item Name</label>
+        <input type="text" readonly class="form-control-plaintext h5" id="itemname" name="itemname" value="<%= Viewitem.name %>" placeholder="Item Name" required>
+    </div>
+    <div class="col">
+        <label for="CategoryName">Category</label>
+        <input type="text" readonly class="form-control-plaintext h5" id="category" name="category" value="<%= Viewitem.category %>" placeholder="Category" required>
+    </div>
+    <div class="col">
+        <label for="Quantity">Quantiy</label>
+        <input type="number" readonly class="form-control-plaintext h5" id="quantiy" name="quantiy" value="<%= Viewitem.quantity %>" placeholder="Quantity" required>
+    </div>
+    <div class="col">
+        <label for="Price">Price</label>
+        <input type="text" readonly class="form-control-plaintext h5" id="price" name="price" value="<%= Viewitem.price %>" placeholder="Price" required>
+    </div> 
+</div>
+<div class="form-control form-control-md mb-3">
+    <label for="descriptionname">Description</label>
+    <input readonly class="form-control-plaintext h5" name="descriptionname" id="description" cols="30" rows="12" placeholder="Description Name" value="<%= Viewitem.description %>"></input>
+</div>
+<br>
+<b class="h5">Last Updated At: <%=Viewitem.createdAt %></b>
+</form>

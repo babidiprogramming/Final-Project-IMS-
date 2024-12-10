@@ -1,0 +1,24 @@
+{
+  "name": "ims",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "ims": "file:",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7"
+  }
+}

@@ -1,0 +1,49 @@
+<h1>SEARCH ITEM</h1> 
+
+<div class="class table-responsive">
+    <% if (item != "") { %>
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Category Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description Name</th>
+                    <th scope="col" class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% item.forEach(itemdetails => { %>
+                    <tr class="align-middle">
+                        <td><%= itemdetails.name %></td>
+                        <td><%= itemdetails.category %></td>
+                        <td><%= itemdetails.quantity %></td>
+                        <td><%= itemdetails.price %></td>
+                        <td><%= itemdetails.description %></td>
+                        <td class="text-end">
+                            <div class="d-flex flex-row justify-content-end gap-2">
+                              <a href="/view/<%= itemdetails._id %>" type="button" class="btn btn-primary btn-small">
+                                VIEW
+                                <i class="bi bi-eye"></i>
+                              </a>
+                              <a href="/edit/<%= itemdetails._id %>" type="button" class="btn btn-warning btn-small">
+                                UPDATE
+                                <i class="bi bi-pencil"></i>
+                              </a>
+                              <form action="/edit/<%= itemdetails._id %>?_method=DELETE" method="POST" class="position-relative">
+                                <button type="submit" class="btn btn-danger btn-small" id="deleteButton">
+                                    DELETE
+                                    <i class="bi bi-person-x"></i>
+                                </button>
+                              </form>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            
+     <% } else { %>
+      <h2>No results founds</h2>
+    <% } %>
+</div>
